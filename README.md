@@ -1,6 +1,6 @@
 # Duplicates
 Duplicates program finds duplicate files or directories in the given directory by using recursive way.
-PROBLEM DESCRIPTION
+## PROBLEM DESCRIPTION
 	In this project, the duplicates program must find the duplicates files or directories in given directories
   or current directory if the part of directory is empty.This is the main problem of this program but it has
   some other prominent parts such as parsing command, finding pattern and pattern matching clearly. This duplicates
@@ -16,21 +16,24 @@ PROBLEM DESCRIPTION
   must find the duplicate files or directories according to input arguments and apply some duties again according to given
   arguments. After that, pattern should be taken account of if it is given and duplicate results must be considered in the
   case of matching with it precisely. 
-
-PROBLEM SOLUTION
+  
+ ## PROBLEM SOLUTION
 	In order to create this program finding duplicates exactly, I need an useful and convenient parser which can parse the
   command line clearly and constitute different missions by evaluating the arguments. Therefore, I have to choose the best
   parser for this aims so that I chose argparse() library because I can arrange my actions by considering arguments properly.
   I parse my command line input by evaluating different options in the description and I obtain enough knowledge about parsing.
+  
   Also, I left the remaining part as the combination of pattern and directories. Hence, I create a list containing this
   remaining part and divide the argument parts after using them. Then, I parse this remaining list to find the pattern in it.
   I access the list including merely directories after pattern is vanished from list. Thus, I handle the parsing part and come
   finding duplicate part. 
-	I start to traverse directories by considering the information coming from arguments and the directories and files is
+  
+  I start to traverse directories by considering the information coming from arguments and the directories and files is
   traversed differently. For files, it is easier than directories because I traverse directories in given ones and I store
   it if the directory represents file. For directories, I write recursive method that finds its own hash value by concatenating
   the sorted hash list. Their hash values is also saved in global dictionary. 
-	After I find duplicates files or directories, searching pattern in duplicates is coming. I want not to print or work
+  
+  After I find duplicates files or directories, searching pattern in duplicates is coming. I want not to print or work
   with command ones that are not available for regex so that I search the dictionary and find the indexes of duplicates
   which are not true. In addition, I erase these duplicates from dictionary and obtain necessary one. Then, I evaluate 
   if command line input includes -c for command or not. If it does not have -c, then printing part comes. For this, I only
